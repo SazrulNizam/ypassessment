@@ -24,5 +24,25 @@ User::factory()->create([
     'password' => Hash::make('password123'),
     'role' => 'lecturer', // Kau set password kau kat sini
 ]);
+
+User::factory()->create([
+    'name' => 'student1',
+    'email' => 'student1@example.com',
+    'password' => Hash::make('password123'),
+    'role' => 'student', // Kau set password kau kat sini
+]);
+User::factory()->create([
+    'name' => 'student2',
+    'email' => 'student2@example.com',
+    'password' => Hash::make('password123'),
+    'role' => 'student', // Kau set password kau kat sini
+]);
+
+User::factory()->create([
+    'name' => 'student3',
+    'email' => 'student3@example.com',
+    'password' => Hash::make('password123'),
+    'role' => 'student', // Kau set password kau kat sini
+]);
     }
 }

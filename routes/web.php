@@ -6,6 +6,7 @@ use \App\http\Controllers\ExamController;
 use \App\http\Controllers\SubjectController;
 use \App\http\Controllers\ClassController;
 use \App\http\Controllers\StudentexamController;
+use \App\http\Controllers\AssignController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,6 +53,11 @@ Route::get('/alpine', function () {
     Route::get('/lecturer/exam/question', [ExamController::class, 'form'])->name('exam.question');
     Route::post('/exam/create-question', [ExamController::class, 'form'])->name('exam.create-qquestion');
 
+
+    //AssignStudent
+    Route::get('/lecturer/class/assign-student/{id}', [AssignController::class, 'IndexStudent'])->name('assign-student.index');
+    Route::get('/lecturer/class/assign-subject/{id}', [AssignController::class, 'IndexSubject'])->name('assign-subject.index');
+    Route::post('/lecturer/class/post-subject/{id}', [AssignController::class, 'PostStudent'])->name('post-subject.index');
 
 
 

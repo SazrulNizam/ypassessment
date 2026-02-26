@@ -23,4 +23,15 @@ class Classroom extends Model
         );
         }
 
+         public function user(){
+
+        return $this->belongsToMany(
+        User::class,
+        'student_classes',
+        'classroom_id',
+        'user_id',
+        
+        );
+        }
+
 }

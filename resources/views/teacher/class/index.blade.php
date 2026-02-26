@@ -48,8 +48,8 @@
                                     @csrf @method('DELETE')
                                     <button class="text-red-600 hover:underline">Padam</button>
                                 </form>
-                             | <a href="{{route('class.show', $datas->id)}}" class="text-blue-600 hover:underline">Assign Student</a> 
-                                | <a href="{{route('class.show', $datas->id)}}" class="text-blue-600 hover:underline">Assign Subject</a> 
+                             | <a href="{{route('assign-student.index', $datas->id)}}" class="text-blue-600 hover:underline">Assign Student</a> 
+                                | <a href="{{route('assign-subject.index', $datas->id)}}" class="text-blue-600 hover:underline">Assign Subject</a> 
 
                             </td>
                         </tr>
