@@ -15,7 +15,7 @@
                     @csrf
                     @method('PUT')
                     <div>
-                        <x-input-label for="name" value="Nama Kelas" />
+                        <x-input-label for="name" value="Name" />
                         <x-text-input id="name" name="name" value="{{$data->name}}" type="text" class="mt-1 block w-full" required />
                     </div>
 

@@ -14,7 +14,7 @@
                 <form action="{{ route('class.create')}}" method="POST" class="mt-6 space-y-6">
                     @csrf
                     <div>
-                        <x-input-label for="name" value="Nama Kelas" />
+                        <x-input-label for="name" value="Name" />
                         <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" required />
                     </div>
 
@@ -46,7 +46,7 @@
                                 <a href="{{route('class.show', $datas->id)}}" class="text-blue-600 hover:underline">Edit</a> | 
                                 <form action="{{ route('class.delete', $datas->id)}}" method="POST" class="inline">
                                     @csrf @method('DELETE')
-                                    <button class="text-red-600 hover:underline">Padam</button>
+                                    <button class="text-red-600 hover:underline">Delete</button>
                                 </form>
                              | <a href="{{route('assign-student.index', $datas->id)}}" class="text-blue-600 hover:underline">Assign Student</a> 
                                 | <a href="{{route('assign-subject.index', $datas->id)}}" class="text-blue-600 hover:underline">Assign Subject</a> 

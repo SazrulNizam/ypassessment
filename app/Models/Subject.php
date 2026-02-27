@@ -11,15 +11,20 @@ class Subject extends Model
     use HasFactory;
 
             protected $fillable = ['name'];
- public function Classroom(){
+
+ public function classroom(){
 
         return $this->belongsToMany(
         Classroom::class,
-        'Classroomsubject',
+        'classroomsubjects',
         'subject_id',
         'classroom_id',
         
         );
         }
 
+             public function exam()
+    {
+        return $this->hasMany(Exam::class);
+    }
 }

@@ -50,11 +50,16 @@ class User extends Authenticatable
       public function Classes(){
 
         return $this->belongsToMany(
-        Classes::class,
+        Classroom::class,
         'student_classes',
         'user_id',
         'classroom_id',
         
         );
         }
+
+        public function student_answers()
+    {
+        return $this->hasMany(StudentAnswer::class, 'user_id');
+    }
 }

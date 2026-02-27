@@ -12,11 +12,11 @@ class Classroom extends Model
 
         protected $fillable = ['name'];
 
-        public function subjects(){
+        public function subject(){
 
         return $this->belongsToMany(
         Subject::class,
-        'Classroomsubject',
+        'classroomsubjects',
         'classroom_id',
         'subject_id'
 
@@ -33,5 +33,10 @@ class Classroom extends Model
         
         );
         }
+
+         public function exam()
+    {
+        return $this->hasMany(Exam::class);
+    }
 
 }
