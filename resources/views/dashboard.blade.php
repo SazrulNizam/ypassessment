@@ -30,16 +30,19 @@
         <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">Aktif</span>
     </div>
 </a>
- @empty
-                            <div class="text-center py-8">
-                                                @if(auth()->user()->role == 'lecturer')
+                                 @empty
+
+<div class="text-center py-8">
+      @if(auth()->user()->role == 'lecturer')
 
                                 <p class="text-gray-400 italic">No classes created yet</p>
-                                @endif
+                                @else
+
                                 <p class="text-gray-400 italic">No classes assigned yet</p>
+                                @endif
 
                             </div>
-@endforelse
+                             @endforelse
 
 </div>
 

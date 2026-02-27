@@ -42,7 +42,7 @@
 @endif
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <header class="mb-6">
-                    <h2 class="text-lg font-medium text-gray-900">Existed Class</h2>
+                    <h2 class="text-lg font-medium text-gray-900">Existed Exam</h2>
                 </header>
 
                 <table class="min-w-full divide-y divide-gray-200 border">
