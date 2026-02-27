@@ -43,9 +43,6 @@ Route::get('/form', function () {
 // Route Lecturer
 Route::middleware(['auth', 'role:lecturer'])->group(function () {
 
-Route::get('/alpine', function () {
-    return view('alpine');
-});
 //Subject
     Route::get('/lecturer/subject/index', [SubjectController::class, 'index'])->name('subject.index');
     Route::post('/subject/create', [SubjectController::class, 'create'])->name('subject.create');
