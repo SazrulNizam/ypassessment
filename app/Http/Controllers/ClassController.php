@@ -4,46 +4,50 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Classroom;
+
 class ClassController extends Controller
 {
-    //
-    public function index(){
+   //
+   public function index()
+   {
 
       $data = Classroom::latest()->get();
 
-      return view ('teacher.class.index', compact('data'));
-    }
+      return view('teacher.class.index', compact('data'));
+   }
 
-    public function create(Request $req){
+   public function create(Request $req)
+   {
 
-    Classroom::create($req->all());
+      Classroom::create($req->all());
 
-          return redirect()->route('class.index')->with('success', 'Class created!');
+      return redirect()->route('class.index')->with('success', 'Class created!');
+   }
 
+   public function show($id)
+   {
 
-    }
+      $data = Classroom::findOrFail($id);
 
-    public function show($id){
+      return view('teacher.class.editshow', compact('data'));
+   }
 
-    $data = Classroom::findOrFail($id);
+   public function edit(Request $req, $id)
+   {
 
-       return view ('teacher.class.editshow', compact('data'));
-    }
+      $class = Classroom::findOrFail($id);
 
-    public function edit (Request $req, $id){
+      $class->update($req->all());
 
-       $class = Classroom::findOrFail($id);
+      return redirect()->route('class.index')->with('message', 'success');
+   }
 
-       $class->update($req->all());
+   public function delete($id)
+   {
 
-       return redirect()->route('class.index')->with('message', 'success');
-    }
+      $delete = Classroom::findOrFail($id);
+      $delete->delete();
 
-    public function delete ($id){
-
-    $delete = Classroom::findOrFail($id);
-    $delete->delete();
-
-    return redirect()->route('class.index')->with('messsage', 'deleted');
-    }
+      return redirect()->route('class.index')->with('messsage', 'deleted');
+   }
 }

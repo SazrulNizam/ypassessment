@@ -16,4 +16,6 @@ class QuestionList extends Model
         return $this->belongsTo(Questions::class);
     }
 
+    
+
 }
