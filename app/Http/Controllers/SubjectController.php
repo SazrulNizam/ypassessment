@@ -4,47 +4,51 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subject;
+
 class SubjectController extends Controller
 {
-    //
-      //
-    public function index(){
+  //
+  //
+  public function index()
+  {
 
-      $data = Subject::latest()->get();
+    $data = Subject::latest()->get();
 
-      return view ('teacher.subject.index', compact('data'));
-    }
+    return view('teacher.subject.index', compact('data'));
+  }
 
-    public function create(Request $req){
+  public function create(Request $req)
+  {
 
     Subject::create($req->all());
 
-          return redirect()->route('subject.index')->with('success', 'Class created!');
+    return redirect()->route('subject.index')->with('success', 'Class created!');
+  }
 
-
-    }
-
-    public function show($id){
+  public function show($id)
+  {
 
     $data = Subject::findOrFail($id);
 
-       return view ('teacher.subject.editshow', compact('data'));
-    }
+    return view('teacher.subject.editshow', compact('data'));
+  }
 
-    public function edit (Request $req, $id){
+  public function edit(Request $req, $id)
+  {
 
-       $subject = Subject::findOrFail($id);
+    $subject = Subject::findOrFail($id);
 
-       $subject->update($req->all());
+    $subject->update($req->all());
 
-       return redirect()->route('subject.index')->with('message', 'success');
-    }
+    return redirect()->route('subject.index')->with('message', 'success');
+  }
 
-    public function delete ($id){
+  public function delete($id)
+  {
 
     $delete = Subject::findOrFail($id);
     $delete->delete();
 
     return redirect()->route('subject.index')->with('messsage', 'deleted');
-    }
+  }
 }

@@ -8,6 +8,7 @@ Sistem Pengurusan Yang Dibina Menggunakan Laravel 11 Breeze
 - Assign Pelajar dan Subjek Dalam Kelas
 - Jenis Soalan: Pilihan Jawapan & Jawapan Terbuka
 - Sekatan Jawapan: Student hanya boleh jawab sekali sahaja
+- Limit Masa 15 Minit
 
 ## Flow Lecturer
 1. Bina Kelas

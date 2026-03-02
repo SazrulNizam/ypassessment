@@ -16,12 +16,12 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
 
-$user = Auth::user();
+    $user = Auth::user();
 
-if ($user->role == 'lecturer') {
+    if ($user->role == 'lecturer') {
         $classes = Classroom::withCount('user')->get();
     } else {
-       
+
         $classes = $user->Classes()->withCount('user')->get();
     }
 
@@ -32,8 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        Route::get('/lecturer/exam/index/{id}', [ExamController::class, 'index'])->name('exam.index');
-
+    Route::get('/lecturer/exam/index/{id}', [ExamController::class, 'index'])->name('exam.index');
 });
 
 Route::get('/form', function () {
@@ -43,19 +42,19 @@ Route::get('/form', function () {
 // Route Lecturer
 Route::middleware(['auth', 'role:lecturer'])->group(function () {
 
-//Subject
+    //Subject
     Route::get('/lecturer/subject/index', [SubjectController::class, 'index'])->name('subject.index');
     Route::post('/subject/create', [SubjectController::class, 'create'])->name('subject.create');
     Route::delete('/subject/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
     Route::get('/edit/subject/{id}', [SubjectController::class, 'show'])->name('subject.show');
-     Route::put('/edit/subject/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
+    Route::put('/edit/subject/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
 
     //Class
-        Route::get('/lecturer/class/index', [ClassController::class, 'index'])->name('class.index');
-     Route::post('/class/create', [ClassController::class, 'create'])->name('class.create');
+    Route::get('/lecturer/class/index', [ClassController::class, 'index'])->name('class.index');
+    Route::post('/class/create', [ClassController::class, 'create'])->name('class.create');
     Route::delete('/class/{id}', [ClassController::class, 'delete'])->name('class.delete');
     Route::get('/edit/class/{id}', [ClassController::class, 'show'])->name('class.show');
-     Route::put('/edit/class/{id}', [ClassController::class, 'edit'])->name('class.edit');
+    Route::put('/edit/class/{id}', [ClassController::class, 'edit'])->name('class.edit');
 
     //Exam
     Route::post('/exam/create', [ExamController::class, 'create'])->name('exam.create');
@@ -69,18 +68,14 @@ Route::middleware(['auth', 'role:lecturer'])->group(function () {
     Route::post('/assign-subject/{id}', [AssignController::class, 'PostSubject'])->name('post-subject.index');
     Route::delete('/remove-student/{id}', [AssignController::class, 'RemoveStudent'])->name('remove-user.index');
     Route::delete('/remove-subject/{id}', [AssignController::class, 'RemoveSubject'])->name('remove-subject.index');
-
-
-
 });
 
 // Route student
 Route::middleware(['auth', 'role:student'])->group(function () {
-    
+
     Route::get('/student/index/{id}', [StudentexamController::class, 'index'])->name('student.index');
     Route::post('/student/submit', [StudentexamController::class, 'submit'])->name('exam.submit');
-
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
