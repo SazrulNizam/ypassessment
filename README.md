@@ -36,7 +36,7 @@ Sistem Pengurusan Yang Dibina Menggunakan Laravel 11 Breeze
 Use these credentials to test the system:
 
 **Lecturer Account:**
-- Email: `test@example.com`
+- Email: `lecturer@peneraju.com`
 - Password: `password123`
 
 **Student Account:**
