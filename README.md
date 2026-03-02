@@ -9,15 +9,27 @@ Sistem Pengurusan Yang Dibina Menggunakan Laravel 11 Breeze
 - Jenis Soalan: Pilihan Jawapan & Jawapan Terbuka
 - Sekatan Jawapan: Student hanya boleh jawab sekali sahaja
 
+## Flow Lecturer
+1. Bina Kelas
+2. Bina Subjek
+3. Daftarkan Pelajar dan Subjek di dalam "Manage Class"
+4. Pergi ke Dashboard untuk Akses Kelas yang Tersedia dan Bina Peperiksaan
+5. Tambah Soalan ke dalam Peperiksaan
+
+## Flow Student
+1. Akses Kelas yang Didaftarkan di Dashboard
+2. Attend
+
 ## Cara Pemasangan (Setup Instructions)
 1. Clone repository ini.
 2. Jalankan `composer install`.
 3. Jalankan `npm install`.
 4. Salin `.env.example` ke `.env`.
 5. Jalankan `php artisan key:generate`.
-6. Jalankan `php artisan migrate --seed`.
-7. Jalankan `npm run dev`.
-8. Jalankan `php artisan serve`.
+6. Jalankan `New-Item -Path database/database.sqlite -ItemType File` untuk windows (powershell) `touch database/database.sqlite` untuk Mac/Linux/Git Bash
+7. Jalankan `php artisan migrate --seed`.
+8. Jalankan `npm run dev`.
+9. Jalankan `php artisan serve`.
 
 
 ## Demo Accounts

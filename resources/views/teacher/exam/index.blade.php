@@ -22,7 +22,7 @@
                          <x-input-label for="subject_id" value="Subject" />
     
                 <select id="subject_id" name="subject_id" 
-        class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+        class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
         
         <option value="" disabled selected>-- Please Choose --</option>
         
@@ -42,7 +42,7 @@
 @endif
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <header class="mb-6">
-                    <h2 class="text-lg font-medium text-gray-900">Existed Class</h2>
+                    <h2 class="text-lg font-medium text-gray-900">Existed Exam</h2>
                 </header>
 
                 <table class="min-w-full divide-y divide-gray-200 border">

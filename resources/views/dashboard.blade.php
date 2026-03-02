@@ -35,9 +35,9 @@
                             @if(auth()->user()->role == 'lecturer')
 
                             <p class="text-gray-400 italic">No classes created yet</p>
-                            @endif
+                            @else
                             <p class="text-gray-400 italic">No classes assigned yet</p>
-
+                             @endif
                         </div>
                         @endforelse
 
